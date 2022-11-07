@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ColorBlock from './components/colorBlock.jsx';
 
-function App() {
+export default function App() {
+  function generateColor() {
+    let HEX_CODE = [];const data_HEX_CODE = 'ABCDEF123456789';for (let i = 0; i < 6; i++) {HEX_CODE.push(data_HEX_CODE[Math.floor((Math.random(1) * data_HEX_CODE.length))]);}HEX_CODE = HEX_CODE.join('');return HEX_CODE;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <section className='row'>
+      <ColorBlock bg={generateColor()}/>
+      <ColorBlock bg={generateColor()}/>
+      <ColorBlock bg={generateColor()}/>
+      <ColorBlock bg={generateColor()}/>
+      <ColorBlock bg={generateColor()}/>
+    </section>
+  )
 }
-
-export default App;
